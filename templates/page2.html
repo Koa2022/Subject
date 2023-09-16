@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}เฉพาะ{% endblock title %}
+{% block content %}
+<div class="card shadow mb-4">
+    
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>รหัสวิชา</th>
+                        <th>ชื่อวิชา</th>
+                        <th>หน่วยกิต</th>
+                        <th>ภาคเรียนที่</th>
+                        <th>ปีการศึกษา</th>
+                        <th>หมวดหมู่</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>รหัสวิชา</th>
+                        <th>ชื่อวิชา</th>
+                        <th>หน่วยกิต</th>
+                        <th>ภาคเรียนที่</th>
+                        <th>ปีการศึกษา</th>
+                        <th>หมวดหมู่</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for sub in subjects %}
+                    <tr>
+                        <td>{{sub.code}}</td>
+                        <td>{{sub.name}}</td>
+                        <td>{{sub.credit}}</td>
+                        <td>{{sub.term}}</td>
+                        <td>{{sub.year}}</td>
+                        <td>{{sub.category}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}
